@@ -1,0 +1,106 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><link href="http://gmpg.org/xfn/11" rel="profile"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><title>Jump Start</title><link rel="stylesheet" href="http://ghstahl.github.io/LearnPingoConsole//css/main.css"> <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link href="/favicon.png" rel="icon"><link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'><link href="" rel="alternate" type="application/rss+xml" title="Learn Pingo Console &middot; " /><meta name="description" content=""><meta name="keywords" content=""> </head><body><div class="row"><div class="docs-list"> <header>
+    <a href="http://ghstahl.github.io/LearnPingoConsole//"><h1 class="header-title">Learn Pingo Console</h1></a>
+</header><ul>  <li class="docs-list-title"> <strong>Tutorial</strong></li> <li class="docs-list-active"> <a href="/LearnPingoConsole/en/docs/tutorial/jump-start/">Jump Start</a></li> <li class=""> <a href="/LearnPingoConsole/en/docs/tutorial/create-command-plugin/">Create Command Plugin</a></li>  <li class="docs-list-title"> <strong>Developer</strong></li> <li class=""> <a href="/LearnPingoConsole/en/docs/developer/parser/">Parser</a></li> <li class=""> <a href="/LearnPingoConsole/en/docs/developer/Enhancements/">Enhancements</a></li>  </ul></div><div class="docs-content"><div class="content"> <script>
+  (function() {
+    var cx = '015815945200332182951:xrisyx6jrce';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script><gcse:search></gcse:search><h1 id="post-title"> Jump Start <small> <a class="docs-improve" href="https://github.com/ghstahl/LearnPingoConsole/edit/master/content/en/docs/tutorial/jump-start.md">Improve page</a></small></h1><p>
+
+<p>Requirements: Visual Studio 2013</p>
+
+<p>The Pingo Console framework is modeled after how nuget.exe works.  It produces a standalone exe, with all its dlls embedded as resources.  No need for after the fact packing to turn a c# console app with a bunch of supporting dlls into a single standalone exe.  Most the work in the framework deals with how help is managed and how plugins are to serve help content to the display engine.  The motivation of the framework was to deal with what a console app should be before you actually bring in the code to make it do something.</p>
+
+<p>At the end of this tutorial we will have created a fully working console app that does some Json conversions, and we will do it without writing hardly any code.  The main thing to get out of this tutorial is to understand how the parts come together to form the app.</p>
+
+<h3 id="anatomy-of-the-app:e019bc037fc8161e85277033b81c3c2b">Anatomy of the App.</h3>
+
+<ol>
+<li><p>Console Starter Project<br />
+This is the stock Microsoft C# project.</p></li>
+
+<li><p><em><strong>Pingo.EmbeddedAssemblies</strong></em> Nuget<br />
+This is used to create an app that has its assemblies embedded as resources.</p></li>
+
+<li><p><em><strong>Pingo.Console</strong></em> Nuget<br />
+This is the core framework engine.  I really don&rsquo;t want to expose too much from this project as I didn&rsquo;t write these classes to be consumed externally.</p></li>
+
+<li><p><em><strong>Pingo.CommandLineHelp</strong></em> Nuget<br />
+This is the Help engine that is really a display engine for help.</p></li>
+
+<li><p>Plugins<br />
+These are written by you to provide help content and the actually command.</p></li>
+</ol>
+
+<h3 id="step-by-step-instructions:e019bc037fc8161e85277033b81c3c2b">Step by Step instructions</h3>
+
+<pre><code>A VSIX to do all this will soon follow.  
+</code></pre>
+
+<ol>
+<li>Create a new console project<br />
+
+<ul>
+<li>Name it <em><strong>&ldquo;ConsoleMe&rdquo;</strong></em></li>
+<li>Enable Nuget Restore for your Solution</li>
+</ul></li>
+<li>Make your Console App a Single Exe<br />
+
+<ul>
+<li>install nuget: <em><strong>Pingo.EmbeddedAssemblies</strong></em></li>
+<li>Agree to the file replacement prompts</li>
+</ul></li>
+<li>Bring in the Pingo Console Kit<br />
+
+<ul>
+<li>install nuget: <em><strong>Pingo.CommandLineHelp</strong></em></li>
+<li>install nuget: <strong><em>Pingo.Console</em></strong></li>
+</ul></li>
+<li>Bring in a few stock commands<br />
+
+<ul>
+<li>install nuget: <em><strong>Pingo.JsonConverters.Commands</strong></em></li>
+<li>install nuget: <em><strong>Pingo.TestCommands</strong></em></li>
+</ul></li>
+
+<li><p>Edit Program.cs<br />
+This is the only code that should added to the hosting app.</p>
+
+<pre><code class="language-c#">  using System;
+  using System.Runtime.CompilerServices;
+  using Pingo.CommandLine.Composite;
+
+
+  namespace ConsoleMe
+  {
+    class Program
+    {
+        private static void Main(string[] args)
+        {
+            AppDomain.CurrentDomain.AssemblyResolve 
+                += new ResolveEventHandler(ConsoleMe.PingoEmbeddedAssemblies.AssemblyResolver.OnResolveAssembly);
+            MainCore(args);
+        }
+
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static void MainCore(string[] args)
+        {
+            Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
+        }
+    }
+  }
+</code></pre></li>
+
+<li><p>Build and Run</p></li>
+</ol>
+</p> <footer><p>Website released under MIT License. Documentation and Courses under GNU FDL. &copy; 2015</p> <small class="language-switch">     <a lang='en' href="http://ghstahl.github.io/LearnPingoConsole//en/docs/tutorial/jump-start/">English</a> | <a lang='de' href="http://ghstahl.github.io/LearnPingoConsole//de/docs/tutorial/jump-start/">Deutsch</a></small></footer></div></div></div> <script src="http://ghstahl.github.io/LearnPingoConsole//js/vendor.bundle.js"></script> <script src="http://ghstahl.github.io/LearnPingoConsole//js/docs.bundle.js"></script> <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body></html>
