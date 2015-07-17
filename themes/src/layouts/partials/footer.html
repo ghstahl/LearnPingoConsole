@@ -7,7 +7,7 @@
       {{ $.Scratch.Set "path" (substr ($.Scratch.Get "path") (len "en/")) }} 
     {{ end }}
     {{ $cur_path := $.Scratch.Get "path" }}
-    <a lang='en' href="{{ .Site.BaseURL }}/en/{{ $cur_path }}">English</a> |
-    <a lang='de' href="{{ .Site.BaseURL }}/de/{{ $cur_path }}">Deutsch</a>
+    <a lang='en' href="{{ .Site.BaseURL }}en/{{ $cur_path }}">English</a> |
+    <a lang='de' href="{{ .Site.BaseURL }}de/{{ $cur_path }}">Deutsch</a>
   </small>
 </footer>

@@ -46,14 +46,14 @@ At the end of this tutorial we will have created a fully working console app tha
     - install nuget: _**Pingo.TestCommands**_
 5. Edit Program.cs  
     This is the only code that should added to the hosting app.  
-    
-      ~~~c#
-      using System;
-      using System.Runtime.CompilerServices;
-      using Pingo.CommandLine.Composite;
 
-      namespace ConsoleMe
-      {
+    ~~~c#
+    using System;
+    using System.Runtime.CompilerServices;
+    using Pingo.CommandLine.Composite;
+
+    namespace ConsoleMe
+    {
         class Program
         {
             private static void Main(string[] args)
@@ -69,6 +69,6 @@ At the end of this tutorial we will have created a fully working console app tha
                 Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
             }
         }
-      }
-      ~~~  
+    }
+    ~~~  
 6. Build and Run 

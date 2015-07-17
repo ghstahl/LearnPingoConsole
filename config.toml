@@ -1,7 +1,10 @@
 baseurl = "http://ghstahl.github.io/LearnPingoConsole/"
 languageCode = "en-us"
 title = "Learn Pingo Console"
-
+pygmentsuseclasses = true
+[params]
+  googleAnalytics = "UA-65241356-1"
+  
 [[menu.doctype]]
   name = "Tutorial"
   url = "/tutorial/" 
