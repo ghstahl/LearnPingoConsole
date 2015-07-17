@@ -10,6 +10,43 @@
     <atom:link href="http://ghstahl.github.io/LearnPingoConsole/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Create Command Plugin</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/tutorial/create-command-plugin/</link>
+      <pubDate>Thu, 07 May 2015 11:09:35 +0000</pubDate>
+      
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/tutorial/create-command-plugin/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Install the &lt;em&gt;&lt;strong&gt;Pingo.Commandline.PluginTemplate&lt;/strong&gt;&lt;/em&gt; Extension&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;direct: &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/7b579419-fdbd-4b47-880c-261409120bb9&#34;&gt;Extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Visual Studio 2013: Tools -&amp;gt; Extensions and Updates&amp;hellip; -&amp;gt; Online&lt;/li&gt;
+&lt;li&gt;restart visual studio 2013&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Create a new Project&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the newly installed &lt;em&gt;&lt;strong&gt;Pingo.Commandline.PluginTemplate&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Name it &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;A wizard prompt asks for what your command name should be.
+
+&lt;ul&gt;
+&lt;li&gt;Enter &lt;em&gt;&lt;strong&gt;&amp;ldquo;Sweet&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Press &amp;ldquo;Done&amp;rdquo;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Build &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Add the &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt; project as a reference to &lt;em&gt;&lt;strong&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Build &lt;strong&gt;&lt;em&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Done and Run!&lt;br /&gt;
+You should see your &lt;em&gt;&lt;strong&gt;&amp;ldquo;Sweet&amp;rdquo;&lt;/strong&gt;&lt;/em&gt; command in the list of now usable commands.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Modify your command project to suit.&lt;/li&gt;
+&lt;li&gt;You can now uninstall the &lt;strong&gt;&lt;em&gt;Pingo.JsonConverters.Commands&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Pingo.TestCommands&lt;/em&gt;&lt;/strong&gt; nugets from &lt;em&gt;&lt;strong&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;, Unless you really want to keep them in there for their profound &lt;strong&gt;&lt;em&gt;awesomeness&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Jump Start</title>
       <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/tutorial/jump-start/</link>
       <pubDate>Thu, 07 May 2015 11:09:35 +0000</pubDate>
@@ -108,49 +145,36 @@ This is the only code that should added to the hosting app.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Create Command Plugin</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/tutorial/create-command-plugin/</link>
-      <pubDate>Thu, 07 May 2015 11:09:35 +0000</pubDate>
-      
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/tutorial/create-command-plugin/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;Install the &lt;em&gt;&lt;strong&gt;Pingo.Commandline.PluginTemplate&lt;/strong&gt;&lt;/em&gt; Extension&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;direct: &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/7b579419-fdbd-4b47-880c-261409120bb9&#34;&gt;Extension&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Visual Studio 2013: Tools -&amp;gt; Extensions and Updates&amp;hellip; -&amp;gt; Online&lt;/li&gt;
-&lt;li&gt;restart visual studio 2013&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Create a new Project&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use the newly installed &lt;em&gt;&lt;strong&gt;Pingo.Commandline.PluginTemplate&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Name it &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;A wizard prompt asks for what your command name should be.
-
-&lt;ul&gt;
-&lt;li&gt;Enter &lt;em&gt;&lt;strong&gt;&amp;ldquo;Sweet&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Press &amp;ldquo;Done&amp;rdquo;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Build &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Add the &lt;em&gt;&lt;strong&gt;&amp;ldquo;My.Sweet.Command&amp;rdquo;&lt;/strong&gt;&lt;/em&gt; project as a reference to &lt;em&gt;&lt;strong&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Build &lt;strong&gt;&lt;em&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Done and Run!&lt;br /&gt;
-You should see your &lt;em&gt;&lt;strong&gt;&amp;ldquo;Sweet&amp;rdquo;&lt;/strong&gt;&lt;/em&gt; command in the list of now usable commands.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Modify your command project to suit.&lt;/li&gt;
-&lt;li&gt;You can now uninstall the &lt;strong&gt;&lt;em&gt;Pingo.JsonConverters.Commands&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Pingo.TestCommands&lt;/em&gt;&lt;/strong&gt; nugets from &lt;em&gt;&lt;strong&gt;&amp;ldquo;ConsoleMe&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;, Unless you really want to keep them in there for their profound &lt;strong&gt;&lt;em&gt;awesomeness&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pingo Console Documentation</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/</link>
+      <title>Enhancements</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
       <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
       
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/</guid>
-      <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
+      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
+At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a class library project&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
+public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
+{
+    public string Header { get { return Resources.Common.Header; } }
+    public string Footer { get { return Resources.Common.Footer; } }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -200,36 +224,12 @@ You should see your &lt;em&gt;&lt;strong&gt;&amp;ldquo;Sweet&amp;rdquo;&lt;/stro
     </item>
     
     <item>
-      <title>Enhancements</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
+      <title>Pingo Console Documentation</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/</link>
       <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
       
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
-      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
-At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a class library project&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
-public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
-{
-    public string Header { get { return Resources.Common.Header; } }
-    public string Footer { get { return Resources.Common.Footer; } }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/</guid>
+      <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
 </description>
     </item>
     
