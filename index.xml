@@ -113,13 +113,13 @@ These are written by you to provide help content and the actually command.&lt;/p
 &lt;li&gt;&lt;p&gt;Edit Program.cs&lt;br /&gt;
 This is the only code that should added to the hosting app.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;  using System;
-  using System.Runtime.CompilerServices;
-  using Pingo.CommandLine.Composite;
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;using System;
+using System.Runtime.CompilerServices;
+using Pingo.CommandLine.Composite;
 
 
-  namespace ConsoleMe
-  {
+namespace ConsoleMe
+{
     class Program
     {
         private static void Main(string[] args)
@@ -136,7 +136,7 @@ This is the only code that should added to the hosting app.&lt;/p&gt;
             Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
         }
     }
-  }
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Build and Run&lt;/p&gt;&lt;/li&gt;
@@ -151,51 +151,6 @@ This is the only code that should added to the hosting app.&lt;/p&gt;
       
       <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/</guid>
       <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Parser</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</link>
-      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
-      
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</guid>
-      <description>&lt;p&gt;Firstly, Pingo Console doesn&amp;rsquo;t care what parser you use for your commands, as that is in isolation.&lt;/p&gt;
-
-&lt;p&gt;Keep it simple.  A lot of parsers, including the one I like, have help and description baked in.  Pingo Console&amp;rsquo;s opinion is that help is separate, which reduces what a parser actually does down to its simplest parts.  I don&amp;rsquo;t use the help or description stuff from the parser I use, or any for that matter.&lt;/p&gt;
-
-&lt;p&gt;My parser of choice:
-&lt;a href=&#34;https://github.com/ghstahl/fluent-command-line-parser&#34;&gt;Pingo Variant: Fluent Command Line Parser&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;For most everything I do the below parsing example is about as complicated as I get.  The only thing my parser is missing is a mutual exclusion option, but I will add that when I need it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;public class TestArgumentParser
-{
-    public string SourcePath { get; private set; }
-    public string OutputPath { get; private set; }
- 
-    public void Parse(string[] args)
-    {
-        var parser = new Fclp.FluentCommandLineParser();
- 
-        parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Source,
-            Resources.Common.OptionShortName_Source)
-            .Required()
-            .Callback(value =&amp;gt; SourcePath = value);
- 
-        parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Output,
-            Resources.Common.OptionShortName_Output)
-            .Required()
-            .Callback(value =&amp;gt; OutputPath = value);
- 
-        var result = parser.Parse(args);
-        if (result.HasErrors)
-        {
-            throw new Exception(result.ErrorText);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -230,6 +185,51 @@ public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
 
 &lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Parser</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</link>
+      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
+      
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</guid>
+      <description>&lt;p&gt;Firstly, Pingo Console doesn&amp;rsquo;t care what parser you use for your commands, as that is in isolation.&lt;/p&gt;
+
+&lt;p&gt;Keep it simple.  A lot of parsers, including the one I like, have help and description baked in.  Pingo Console&amp;rsquo;s opinion is that help is separate, which reduces what a parser actually does down to its simplest parts.  I don&amp;rsquo;t use the help or description stuff from the parser I use, or any for that matter.&lt;/p&gt;
+
+&lt;p&gt;My parser of choice:
+&lt;a href=&#34;https://github.com/ghstahl/fluent-command-line-parser&#34;&gt;Pingo Variant: Fluent Command Line Parser&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For most everything I do the below parsing example is about as complicated as I get.  The only thing my parser is missing is a mutual exclusion option, but I will add that when I need it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;public class TestArgumentParser
+{
+    public string SourcePath { get; private set; }
+    public string OutputPath { get; private set; }
+
+    public void Parse(string[] args)
+    {
+        var parser = new Fclp.FluentCommandLineParser();
+
+        parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Source,
+            Resources.Common.OptionShortName_Source)
+            .Required()
+            .Callback(value =&amp;gt; SourcePath = value);
+
+        parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Output,
+            Resources.Common.OptionShortName_Output)
+            .Required()
+            .Callback(value =&amp;gt; OutputPath = value);
+
+        var result = parser.Parse(args);
+        if (result.HasErrors)
+        {
+            throw new Exception(result.ErrorText);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

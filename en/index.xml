@@ -113,13 +113,13 @@ These are written by you to provide help content and the actually command.&lt;/p
 &lt;li&gt;&lt;p&gt;Edit Program.cs&lt;br /&gt;
 This is the only code that should added to the hosting app.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;  using System;
-  using System.Runtime.CompilerServices;
-  using Pingo.CommandLine.Composite;
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;using System;
+using System.Runtime.CompilerServices;
+using Pingo.CommandLine.Composite;
 
 
-  namespace ConsoleMe
-  {
+namespace ConsoleMe
+{
     class Program
     {
         private static void Main(string[] args)
@@ -136,7 +136,7 @@ This is the only code that should added to the hosting app.&lt;/p&gt;
             Pingo.CommandLine.EntryPoint.Program.MefRunnerEntryPoint(new EntryAssemblyEmbeddedMefAssemblies(), args);
         }
     }
-  }
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Build and Run&lt;/p&gt;&lt;/li&gt;
@@ -242,21 +242,21 @@ All you need to write is your command and provide the framework your help string
 {
     public string SourcePath { get; private set; }
     public string OutputPath { get; private set; }
- 
+
     public void Parse(string[] args)
     {
         var parser = new Fclp.FluentCommandLineParser();
- 
+
         parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Source,
             Resources.Common.OptionShortName_Source)
             .Required()
             .Callback(value =&amp;gt; SourcePath = value);
- 
+
         parser.Setup&amp;lt;string&amp;gt;(CaseType.CaseInsensitive, Resources.Common.OptionLongName_Output,
             Resources.Common.OptionShortName_Output)
             .Required()
             .Callback(value =&amp;gt; OutputPath = value);
- 
+
         var result = parser.Parse(args);
         if (result.HasErrors)
         {
