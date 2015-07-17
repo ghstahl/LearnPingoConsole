@@ -15,7 +15,7 @@ My parser of choice:
 [Pingo Variant: Fluent Command Line Parser](https://github.com/ghstahl/fluent-command-line-parser)
  
 For most everything I do the below parsing example is about as complicated as I get.  The only thing my parser is missing is a mutual exclusion option, but I will add that when I need it.  
- 
+
 
 ~~~c#
 public class TestArgumentParser
