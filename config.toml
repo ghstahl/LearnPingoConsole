@@ -1,7 +1,6 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://ghstahl.github.io/LearnPingoConsole/"
 languageCode = "en-us"
 title = "Learn Pingo Console"
-OpenSourceRepo="https://github.com/ghstahl/PingoConsole"
 
 [[menu.doctype]]
   name = "Tutorial"

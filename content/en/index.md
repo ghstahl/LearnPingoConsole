@@ -11,7 +11,7 @@ doc_site_github = "Site on github"
 
 ### Get Started
 
-For the "A tutorial is all I need crowd": [Enough chit chat, Lets do this thing!](/en/docs/tutorial/jump-start/).  
+For the "A tutorial is all I need crowd": [Enough chit chat, Lets do this thing!](docs/tutorial/jump-start/).  
 
 ### Motivation
 
@@ -33,7 +33,7 @@ I rarely need to create a console app, but it is a requirement to know how to pr
     All you need to write is your command and provide the framework your help strings.  
     
 4. I should be able to make the mother of all command line apps by simply installing a bunch of nugets that implement the Pingo Console command interfaces.
-    [Create Your Own Command!](/en/docs/tutorial/create-command-plugin/).
+    [Create Your Own Command!](docs/tutorial/create-command-plugin/).
     
 5. Command-Line apps should be single stand-alone executables.  
 
