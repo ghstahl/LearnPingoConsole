@@ -145,6 +145,50 @@ namespace ConsoleMe
     </item>
     
     <item>
+      <title>Pingo Console Documentation</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/docs/</link>
+      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
+      
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/docs/</guid>
+      <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enhancements</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
+      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
+      
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
+      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
+At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a class library project&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
+public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
+{
+    public string Header { get { return Resources.Common.Header; } }
+    public string Footer { get { return Resources.Common.Footer; } }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Parser</title>
       <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</link>
       <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
@@ -186,50 +230,6 @@ namespace ConsoleMe
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pingo Console Documentation</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/</link>
-      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
-      
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/</guid>
-      <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Enhancements</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
-      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
-      
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
-      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
-At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a class library project&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
-public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
-{
-    public string Header { get { return Resources.Common.Header; } }
-    public string Footer { get { return Resources.Common.Footer; } }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

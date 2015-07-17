@@ -270,10 +270,10 @@ All you need to write is your command and provide the framework your help string
     
     <item>
       <title>Pingo Console Documentation</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/</link>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/docs/</link>
       <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
       
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/</guid>
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/docs/</guid>
       <description>&lt;p&gt;Pingo Console is a MEF based plugin architecture that has a built-in help engine.  It is designed for minimal contribution by developers to add a custom command to a console app.  The best place to start is with the jump start tutorial, as this will give you a sense of how the architecture is layed out.&lt;/p&gt;
 </description>
     </item>
