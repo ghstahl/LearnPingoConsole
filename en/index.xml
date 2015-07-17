@@ -186,6 +186,8 @@ public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
       <guid>http://ghstahl.github.io/LearnPingoConsole/en/</guid>
       <description>
 
+&lt;p&gt; &lt;img src=&#34;http://ghstahl.github.io/LearnPingoConsole/images/jsonconvert.png&#34;  /&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;get-started:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Get Started&lt;/h3&gt;
 
 &lt;p&gt;For the &amp;ldquo;A tutorial is all I need crowd&amp;rdquo;: &lt;a href=&#34;docs/tutorial/jump-start/&#34;&gt;Enough chit chat, Lets do this thing!&lt;/a&gt;.&lt;/p&gt;
