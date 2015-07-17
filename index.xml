@@ -155,40 +155,6 @@ This is the only code that should added to the hosting app.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Enhancements</title>
-      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
-      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
-      
-      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
-      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
-At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a class library project&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
-public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
-{
-    public string Header { get { return Resources.Common.Header; } }
-    public string Footer { get { return Resources.Common.Footer; } }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Parser</title>
       <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/parser/</link>
       <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
@@ -275,6 +241,40 @@ All you need to write is your command and provide the framework your help string
 &lt;h3 id=&#34;references:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;References&lt;/h3&gt;
 
 &lt;p&gt;The help section in Pingo Console is exactly like nuget.exe.  So much so, that if Pingo Console was around I would hope the nuget.exe folks would have used it to jump stater their project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enhancements</title>
+      <link>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</link>
+      <pubDate>Wed, 06 May 2015 11:09:35 +0000</pubDate>
+      
+      <guid>http://ghstahl.github.io/LearnPingoConsole/en/docs/developer/Enhancements/</guid>
+      <description>&lt;p&gt;This is a work in progress where I am cherry picking what resources I want to let come in via a plugin.&lt;br /&gt;
+At the moment I am only accounting for a header and footer string for the console output pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/Pingo.Theme&#34;&gt;Pingo.Theme Reference Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a class library project&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Name it &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Add this project as a reference in your console app&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the following code to your &lt;strong&gt;&lt;em&gt;&amp;ldquo;My.PingoConsole.Theme&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; project&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c#&#34;&gt;[Export(typeof(Pingo.CommandLine.Contracts.Help.IHelpResource))]
+public class MakeItMineTheme : Pingo.CommandLine.Contracts.Help.IHelpResource
+{
+    public string Header { get { return Resources.Common.Header; } }
+    public string Footer { get { return Resources.Common.Footer; } }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have my strings comming out of resources.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
