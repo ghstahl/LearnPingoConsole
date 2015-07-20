@@ -71,4 +71,8 @@ At the end of this tutorial we will have created a fully working console app tha
         }
     }
     ~~~  
+    
+    Your project should look a lot like the following:  [JsonConvert Project](https://github.com/ghstahl/PingoConsole/tree/master/JsonConvert)  
+    
+    
 6. Build and Run 
