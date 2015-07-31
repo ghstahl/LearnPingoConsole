@@ -137,7 +137,9 @@ namespace ConsoleMe
         }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your project should look a lot like the following:  &lt;a href=&#34;https://github.com/ghstahl/PingoConsole/tree/master/JsonConvert&#34;&gt;JsonConvert Project&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Build and Run&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
