@@ -2,6 +2,7 @@ baseurl = "http://ghstahl.github.io/LearnPingoConsole/"
 languageCode = "en-us"
 title = "Learn Pingo Console"
 pygmentsuseclasses = true
+disqusShortname = "learnpingoconsole"
 [params]
   googleAnalytics = "UA-65241356-1"
   
